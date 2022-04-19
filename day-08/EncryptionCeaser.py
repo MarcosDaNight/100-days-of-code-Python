@@ -14,13 +14,16 @@ def encrypt(text, shift):
     #print output: "The encoded text is mjqqt"
     cipher_text = ""
     for l in range(len(text)):
-        cipher_text += alphabet[alphabet.index(text[l]) + shift]
+        cipher_text += alphabet[verifyShift(alphabet.index(text[l]) + shift)]
     print(cipher_text)
     #print(text)
     ##HINT: How do you get the index of an item in a list:
     #https://stackoverflow.com/questions/176918/finding-the-index-of-an-item-in-a-list
 
     ##🐛Bug alert: What happens if you try to encode the word 'civilization'?🐛
-
+def verifyShift(shift_amout):
+    if shift_amout >= len(alphabet):
+         shift_amout -= len(alphabet)
+    return shift_amout
 #TODO-3: Call the encrypt function and pass in the user inputs. You should be able to test the code and encrypt a message. 
 encrypt(text, shift)
