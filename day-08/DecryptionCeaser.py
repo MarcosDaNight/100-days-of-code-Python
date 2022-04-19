@@ -23,17 +23,14 @@ def decrypt(plain_text, shift_amount):
 
 def cesarEncryption():
     direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+    text = input("Type your message:\n").lower()
+    shift = int(input("Type the shift number:\n"))
     if direction == "encode":
-        text = input("Type your message:\n").lower()
-        shift = int(input("Type the shift number:\n"))
         print("The encode text is "+ encrypt(text, shift))
     elif direction == "decode":
-        text = input("Type your message:\n").lower()
-        shift = int(input("Type the shift number:\n"))
         print("The decode text is " + decrypt(text, shift))
     else:
         print("Wrong chosen, please try again.\n")
-       
         cesarEncryption()
 
 cesarEncryption()
