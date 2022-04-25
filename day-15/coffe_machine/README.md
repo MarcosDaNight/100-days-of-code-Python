@@ -12,6 +12,7 @@
     
     a. For maintainers of the coffee machine, they can use “off” as the secret word to turn off
     the machine. Your code should end execution when this happens.
+    
 **3. Print report.**
     
     a. When the user enters “report” to the prompt, a report should be generated that shows
@@ -30,6 +31,7 @@
     not continue to make the drink but print: “Sorry there is not enough water.”
     
     c. The same should happen if another resource is depleted, e.g. milk or coffee.
+
 **5. Process coins.**
     
     a. If there are sufficient resources to make the drink selected, then the program should
@@ -39,6 +41,7 @@
     
     c. Calculate the monetary value of the coins inserted. E.g. 1 quarter, 2 dimes, 1 nickel, 2
     pennies = 0.25 + 0.1 x 2 + 0.05 + 0.01 x 2 = $0.52
+    
 **6. Check transaction successful?**
     
     a. Check that the user has inserted enough money to purchase the drink they selected.
