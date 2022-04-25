@@ -21,7 +21,7 @@
     Milk: 50ml
     Coffee: 76g
     Money: $2.5
-    
+
 **4. Check resources sufficient?**
     
     a. When the user chooses a drink, the program should check if there are enough
