@@ -11,6 +11,13 @@ colours = ["CornflowerBlue", "DarkOrchid", "IndianRed", "DeepSkyBlue",
 directions = [0, 90, 180, 270]
 
 
+def random_color():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    random_color = (r, g, b)
+    return random_color
+
 # TODO challenge 1
 def make_square():
     """Function for turtle make a square"""
@@ -46,7 +53,7 @@ def drawn_shape(sides):
 def crescent_drawn():
     """Function to make a crescent geometric figures"""
     for shape_side_n in range(3, 10):
-        tim.color(random.choice(colours))
+        tim.color(random_color())
         drawn_shape(shape_side_n)
 
 
@@ -54,8 +61,9 @@ def crescent_drawn():
 
 # TODO challenge 4, generate a random walk
 def random_walk(size):
+    """Function to make random walk"""
     if size > 0:
-        tim.color(random.choice(colours))
+        tim.color(random_color())
         tim.fd(30)
         tim.setheading(random.choice(directions))
         return random_walk(size - 1)
@@ -63,7 +71,9 @@ def random_walk(size):
 
 tim.pensize(15)
 tim.speed(10)
-random_walk(200)
+
 
 screen = Screen()
+screen.colormode(255)
+random_walk(200)
 screen.exitonclick()
