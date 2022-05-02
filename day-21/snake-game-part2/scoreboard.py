@@ -1,8 +1,9 @@
-from turtle import Turtle, Screen
+from turtle import Turtle
 
 ALIGN = "center"
 FONT = ('Times New Roman', 15, 'normal')
 FONT_OVER = ('Times New Roman', 15, 'bold')
+
 
 class Scoreboard(Turtle):
 
