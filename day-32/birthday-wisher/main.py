@@ -5,7 +5,7 @@ from email.message import EmailMessage
 import smtplib
 
 MY_EMAIL = "email.sender.py.smpt@gmail.com"
-MY_PASSWORD = "RPCKkjz45cqehwK"
+MY_PASSWORD = ""
 
 
 def generate_msg(recipient_email, sender, content):
@@ -18,11 +18,6 @@ def generate_msg(recipient_email, sender, content):
 
 
 data = pandas.read_csv("birthdays.csv")
-email = data.email[2]
-name = data.name[2]
-year = data.year[2]
-month = data.month[2]
-day = data.day[2]
 
 birthdays_dict = {(data_row["month"], data_row["day"]): data_row for (index, data_row) in data.iterrows()}
 today_tuple = (datetime.now().month, datetime.now().day)
