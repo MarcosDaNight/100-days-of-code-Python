@@ -5,7 +5,7 @@ from email.message import EmailMessage
 import smtplib
 
 MY_EMAIL = "email.sender.py.smpt@gmail.com"
-MY_PASSWORD = "RPCKkjz45cqehwK"
+MY_PASSWORD = ""
 
 
 def generate_msg(recipient_email, sender, content):
