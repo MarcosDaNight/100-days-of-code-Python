@@ -8,7 +8,7 @@ MY_LAT = -7.230950
 MY_LONG = -35.881889
 
 MY_EMAIL = "email.sender.py.smpt@gmail.com"
-MY_PASSWORD = "RPCKkjz45cqehwK"
+MY_PASSWORD = ""
 CONTENT = "Hi! This is a message for you to let you know that the ISS Station has moved from its current location. \n" \
           "Get out yot house and look up the sky's. Enjoy the ISS crossing! "
 
