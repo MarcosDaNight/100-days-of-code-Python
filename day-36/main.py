@@ -1,4 +1,5 @@
 import requests
+from twilio.rest import Client
 
 STOCK = "TSLA"
 COMPANY_NAME = "Tesla Inc"
@@ -8,6 +9,9 @@ NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
 
 STOCK_API_KEY = "319TWXQHDGPV1ESC"
 NEWS_API_KEY = "7e2c856c85434800ad187b03d6313733"
+
+TWILIO_SID = "AC25ff4e67c2b9ddb4595eee0da2b24153"  # your account SID
+TWILIO_TOLKEN = "e8a8be5db649a854df11c776091d3e20"  # your auth tolken
 
 stock_params = {
     "function": "TIME_SERIES_DAILY",
@@ -41,13 +45,14 @@ if diff_percent > 1:
     three_articles = articles[:3]
     print(three_articles)
 
-# Optional: Format the SMS message like this:
-"""
-TSLA: 🔺2%
-Headline: Were Hedge Funds Right About Piling Into Tesla Inc. (TSLA)?. 
-Brief: We at Insider Monkey have gone over 821 13F filings that hedge funds and prominent investors are required to file by the SEC The 13F filings show the funds' and investors' portfolio positions as of March 31st, near the height of the coronavirus market crash.
-or
-"TSLA: 🔻5%
-Headline: Were Hedge Funds Right About Piling Into Tesla Inc. (TSLA)?. 
-Brief: We at Insider Monkey have gone over 821 13F filings that hedge funds and prominent investors are required to file by the SEC The 13F filings show the funds' and investors' portfolio positions as of March 31st, near the height of the coronavirus market crash.
-"""
+    formatted_article = [f"Headline: {article['title']}. \nBrief: {article['description']}" for article in three_articles]
+
+    for article in three_articles:
+        client = Client(TWILIO_SID, TWILIO_TOLKEN)
+        message = client.messages \
+            .create(
+            body=article,
+            from_='+13193463515',
+            to='+5583981214614'
+        )
+
