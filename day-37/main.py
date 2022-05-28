@@ -1,4 +1,5 @@
 from datetime import datetime
+
 import requests
 
 USERNAME = "marcosgdn"
@@ -44,5 +45,23 @@ pixel_data = {
     "quantity": "61",
 }
 
-response = requests.post(url=pixel_creation_end_point, json=pixel_data, headers=headers)
-print(response.text)
+# response = requests.post(url=pixel_creation_end_point, json=pixel_data, headers=headers)
+# print(response.text)
+
+date_update = datetime.now().strftime("%Y%m%d")  # chose a date
+
+update_pixel_end_point = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH_ID}/{date_update}"
+
+update_data = {
+    "quantity": "42.5",
+}
+
+# response = requests.put(url=update_pixel_end_point, json=update_data, headers=headers)
+# print(response.text)
+
+data_delete = datetime.now().strftime("%Y%m%d")  # chose a date
+
+delete_pixel_end_point = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH_ID}/{data_delete}"
+
+response = requests.delete(url=delete_pixel_end_point, headers=headers)
+print(response)
