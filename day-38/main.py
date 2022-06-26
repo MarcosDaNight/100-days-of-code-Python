@@ -1,3 +1,5 @@
+import os
+
 import requests
 from datetime import datetime
 
@@ -35,6 +37,9 @@ result = response.json()
 today_date = datetime.now().strftime("%d/%m/%Y")
 now_time = datetime.now().strftime("%X")
 
+bearer_headers = {
+    "Authorization": f"Bearer {os.environ['TOKEN']}"
+}
 
 for exercise in result["exercises"]:
     sheet_inputs = {
